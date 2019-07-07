@@ -1,0 +1,23 @@
+.hljs-tag
+{
+  color: #F7DF1E;
+}
+
+/* Obi Wan Kenobi */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition 
+{
+  color: #fff;
+}
+
+/* Millenium Falcon */
+.hljs 
+{
+  display: block;
+  overflow-x: auto;
+  background: #111;
+  color: #ccc;
+}
+
