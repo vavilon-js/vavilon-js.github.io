@@ -20,6 +20,14 @@
     "name": "Nikita Karamov",
     "email": "nick@karamoff.ru"
   },
-  "scripts": {},
-  "devDependencies": {}
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2"
+  }
 }
