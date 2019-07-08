@@ -1,69 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>vavilon.js | A quick, lightweight and easy-to-use i18n engine for static websites</title>
 
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400&display=swap&subset=cyrillic"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/html.min.js"></script>
-    <link href="./dist/css/style.min.css" rel="stylesheet">
+    <link href="./dist/css/main.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./dist/css/highlight.css">
+    <!-- <link rel="stylesheet" href="./dist/css/highlight.css">
     <script src="./dist/js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initHighlightingOnLoad();</script> -->
 </head>
-<body>
-    <header class="header">
-        <img class="logo" src="./public/img/js-logo.svg" alt="vavilon.js logo">
-        <p class="lead">A quick, lightweight and easy-to-use i18n engine for static websites</p>
-        <div class="">
-            <pre><code class="block block-small html mw100">&lt;script src="https://cdn.jsdelivr.net/npm/vavilon@0.3.0/dist/vavilon.min.js"&gt;&lt;/script&gt;</code></pre>
-        </div>
-    </header>
-    <main class="main">
-        <p>With <code>vavilon.js</code> translating static websites is just a matter of a few extra lines of code.</p>
-        <section class="files">
-            <section class="file html oh">
-                <h3><code>index.html</code></h3>
-                <pre><code class="block html">&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;title&gt;Hello World&lt;/title&gt;
-  &lt;script src="ru.json" type="application/json" data-vavilon-dict="ru"&gt;&lt;/script&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vavilon@0.3.0/dist/vavilon.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1 class="vavilon" data-vavilon="hello"&gt;Hello World!&lt;/h1&gt;
-  &lt;hr&gt;
-  &lt;button onclick="changeLocale('ru')"&gt;Russian&lt;/button&gt;
-  &lt;button onclick="changeLocale('en')"&gt;English&lt;/button&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-            </section>
-        
-            <section class="file json oh">
-                <h3><code>ru.json</code></h3>
-                <pre><code class="block json">{
-    "hello": "Привет, мир!"
-}</code></pre>
-            </section>
-        </section>
 
-        <p>You can find more info in our <a href="https://github.com/NickKaramoff/vavilon.js#readme">README on GitHub</a></p>
-    </main>
-    <footer class="footer">
-        <img src="./public/img/logo.svg" alt="Vavilon logo" width="75">
-        <p>
-            <a href="https://github.com/vavilon-js/vavilon.js"><code>vavilon.js</code></a>
-            is&nbsp;distributed under the&nbsp;<a href="https://github.com/vavilon-js/vavilon.js/blob/master/LICENSE">MIT&nbsp;license</a>.
+<body>
+    <header>
+        <nav class="navbar is-primary has-shadow" role="navigation" aria-label="Header">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href="/" class="navbar-item">
+                            <img src="./public/img/js-logo.svg" alt="vavilon.js logo" width="130" height="28">
+                        </a>
         
-            Found an&nbsp;issue with the&nbsp;website? You can report it&nbsp;<a href="https://github.com/vavilon-js/vavilon-js.github.io/issues/new">here</a>.
-        </p>
-        <p>
-            Vavilon icon made by&nbsp;<a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius&nbsp;Dan</a> from&nbsp;<a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a> is&nbsp;licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC&nbsp;3.0&nbsp;BY</a>
-        </p>
-    </footer>
+                        <a role="button" class="navbar-burger burger" aria-label="Expand" aria-expanded="false"
+                            data-target="navbar">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <div id="navbar" class="navbar-menu">
+                        <div class="navbar-start">
+                            <a href="/get-started" class="navbar-item">
+                                Get started
+                            </a>
+                            <a href="/examples" class="navbar-item">
+                                Examples
+                            </a>
+                        </div>
+                        <div class="navbar-end">
+                            <a href="https://github.com/vavilon-js/vavilon.js" target="_blank" class="navbar-item">
+                                <span class="icon"><img src="./public/icons/github.svg"></span>
+                            </a>
+                            <a href="https://npmjs.com/package/vavilon" target="_blank" class="navbar-item">
+                                <span class="icon"><img src="./public/icons/npm.svg"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+    </header>
+    <main>
+        <section class="hero is-light">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <p class="has-text-black is-size-1-desktop is-size-3 has-text-weight-light has-text-centered">
+                        Say goodbye to duplicate html files
+                    </p>
+                    <p class="is-size-5 has-text-grey has-text-centered mb30">
+                        vavilon.js makes i18n for static sites easy to setup and maintain
+                    </p>
+                    <a href="/get-started" class="button is-primary is-medium">Get started</a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column has-text-centered">
+                        <h2 class="title is-4">Gradual setup</h2>
+                        <p class="subtitle is-6">Translate string by string while keeping the site functional</p>
+                    </div>
+                    <div class="column has-text-centered">
+                        <h2 class="title is-4">Lightweight bundle</h2>
+                        <p class="subtitle is-6">vavilon.js weights only 2.2 KiB (&lt;1000 bytes gzipped)</p>
+                    </div>
+                    <div class="column has-text-centered">
+                        <h2 class="title is-4">Easy maintenance</h2>
+                        <p class="subtitle is-6">Edit translations without editing the website source code</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>

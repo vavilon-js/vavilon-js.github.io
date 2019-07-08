@@ -23,9 +23,9 @@
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp",
-    "watch": "gulp watch"
   },
   "devDependencies": {
+    "bulma": "^0.7.5",
     "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2"

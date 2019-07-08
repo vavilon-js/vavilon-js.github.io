@@ -9,15 +9,12 @@ function scss(cb) {
     }
 
     gulp
-        .src('./src/scss/style.scss')
+        .src('./src/scss/main.scss')
         .pipe(sass(options))
-        .pipe(rename('style.min.css'))
+        .pipe(rename('main.min.css'))
         .pipe(gulp.dest('./dist/css/'));
 
     cb();
 }
 
 exports.default = gulp.series(scss);
-exports.watch = function() {
-    gulp.watch('./src/scss/**/*.scss', scss);
-}
