@@ -1,0 +1,25 @@
+{
+  "name": "vavilon-js.github.io",
+  "version": "1.0.0",
+  "description": "Website repository for vavilon.js",
+  "private": true,
+  "license": "MIT",
+  "keywords": [
+    "vavilon",
+    "website"
+  ],
+  "homepage": "https://github.com/vavilon-js/vavilon-js.github.io#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vavilon-js/vavilon-js.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vavilon-js/vavilon-js.github.io/issues"
+  },
+  "author": {
+    "name": "Nikita Karamov",
+    "email": "nick@karamoff.ru"
+  },
+  "scripts": {},
+  "devDependencies": {}
+}
