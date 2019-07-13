@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link href="./dist/css/main.min.css" rel="stylesheet">
 
-    <!-- <link rel="stylesheet" href="./dist/css/highlight.css">
+    <link rel="stylesheet" href="./dist/css/highlight.css?v=4">
     <script src="./dist/js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script> -->
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
 <body>
@@ -67,7 +67,7 @@
                     <p class="is-size-5 has-text-grey has-text-centered vav-subtitle">
                         vavilon.js makes i18n for static sites easy to setup and maintain
                     </p>
-                    <a href="/get-started" class="button is-primary is-medium">Get started</a>
+                    <a href="#get-started" class="button is-primary is-medium">Get started</a>
                 </div>
             </div>
         </section>
@@ -98,9 +98,68 @@
                 </div>
             </div>
         </section>
-        <section class="section">
+        <section class="section" id="get-started">
             <div class="container">
                 <h2 class="title is-2 has-text-centered">Get started</h2>
+                <article class="vav-get-started-step">
+                    <h3 class="title is-4">Step 1. Include vavilon.js in your webpage</h3>
+                    <p class="subtitle is-6">
+                        You can also get the bundle via
+                        <a href="https://www.npmjs.com/package/vavilon">npm</a>
+                        or
+                        <a href="https://github.com/vavilon-js/vavilon.js/releases">GitHub Releases</a>.
+                    </p>
+                    <figure>
+                        <pre><code class="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vavilon@1.0.0/dist/vavilon.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                    </figure>
+                </article>
+                <article class="vav-get-started-step">
+                    <h3 class="title is-4">Step 2. IDentify your strings</h3>
+                    <p class="subtitle is-6">
+                        Think of a unique ID for every string and add it using <code>vavilon</code> class and
+                        <code>data-vavilon</code> attribute.
+                    </p>
+                    <figure>
+                        <pre><code class="html">&lt;h1 class=&quot;vavilon&quot; data-vavilon=&quot;hello&quot;&gt;Hello world!&lt;/h1&gt;</code></pre>
+                    </figure>
+                </article>
+                <article class="vav-get-started-step">
+                    <h3 class="title is-4">Step 3. Translate your strings</h3>
+                    <p class="subtitle is-6">
+                        Create a JSON file with an object where keys are the string IDs and the values are the
+                        translated strings.
+                    </p>
+                    <figure>
+                        <pre><code class="json">{
+  &quot;hello&quot;: &quot;Hallo Welt!&quot;
+}</code></pre>
+                    </figure>
+                </article>
+                <article class="vav-get-started-step">
+                    <h3 class="title is-4">Step 4. Connect the dictionaries</h3>
+                    <p class="subtitle is-6">
+                        Just before you load the vavilon.js, insert the links to your dictionaries and specify their
+                        language. Don't forget about <code>&lt;html&gt;</code> tag!
+                    </p>
+                    <figure>
+                        <pre><code class="html">&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;script src=&quot;path/to/de.json&quot; type=&quot;application/json&quot; data-vavilon-dict=&quot;de&quot;&gt;&lt;/script&gt;
+  &lt;!-- include vavilon.js here --&gt;
+&lt;/head&gt;
+&lt;/html&gt;</code></pre>
+                    </figure>
+                </article>
+                <article class="vav-get-started-step">
+                    <h3 class="title is-4">Step 5. Add the switch</h3>
+                    <p class="subtitle is-6">
+                        The automatic language switching is already up and running! If you want your user to be able to
+                        switch languages, use the <code>setLang</code> function.
+                    </p>
+                    <figure>
+                        <pre><code class="html">&lt;button onclick=&quot;setLang(&#39;de&#39;)&quot;&gt;German&lt;/button&gt;</code></pre>
+                    </figure>
+                </article>
             </div>
         </section>
     </main>

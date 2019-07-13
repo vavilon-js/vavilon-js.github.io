@@ -26,3 +26,10 @@ $family-monospace: "IBM Plex Mono", Monaco, monospace;
     margin-bottom: 1rem;
 }
 
+.vav-get-started-step {
+    margin-bottom: 3rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
