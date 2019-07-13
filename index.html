@@ -8,7 +8,7 @@
     <title>vavilon.js | A quick, lightweight and easy-to-use i18n engine for static websites</title>
 
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400&display=swap&subset=cyrillic"
-        rel="stylesheet">
+          rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link href="./dist/css/main.min.css" rel="stylesheet">
 
@@ -20,42 +20,36 @@
 <body>
     <header>
         <nav class="navbar is-primary has-shadow" role="navigation" aria-label="Header">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a href="/" class="navbar-item">
-                            <img src="./public/img/js-logo.svg" alt="vavilon.js logo" width="130" height="28">
-                        </a>
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/" class="navbar-item">
+                        <img src="./public/img/js-logo.svg" alt="vavilon.js logo" width="130" height="28">
+                    </a>
 
-                        <a role="button" class="navbar-burger burger" aria-label="Expand" aria-expanded="false"
-                            data-target="navbar">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
+                    <a role="button" class="navbar-burger burger" id="navbarToggle" onclick="toggleNav()">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a href="#get-started" class="navbar-item">
+                            Get started
+                        </a>
+                        <a href="#examples" class="navbar-item">
+                            Examples
+                        </a>
+                        <a href="#donate" class="navbar-item">
+                            Donate
                         </a>
                     </div>
-                    <div id="navbar" class="navbar-menu">
-                        <div class="navbar-start">
-                            <a href="#get-started" class="navbar-item">
-                                Get started
-                            </a>
-                            <a href="#examples" class="navbar-item">
-                                Examples
-                            </a>
-                            <a href="#donate" class="navbar-item">
-                                Donate
-                            </a>
-                        </div>
-                        <div class="navbar-end">
-                            <a href="https://github.com/vavilon-js/vavilon.js" target="_blank" class="navbar-item">
-                                <span class="icon"><img src="./public/icons/github.svg"></span>
-                            </a>
-                            <a href="https://npmjs.com/package/vavilon" target="_blank" class="navbar-item">
-                                <span class="icon"><img src="./public/icons/npm.svg"></span>
-                            </a>
-                        </div>
+                    <div class="navbar-end">
+                        
                     </div>
                 </div>
-            </nav>
+            </div>
+        </nav>
     </header>
     <main>
         <section class="hero">
@@ -78,7 +72,8 @@
                     <div class="column has-text-centered vav-feature">
                         <img class="icon is-large vav-feature-icon" src="./public/icons/airballoon.svg" alt="">
                         <h3 class="title is-4">Lightweight bundle</h3>
-                        <p class="subtitle is-6">vavilon.js weighs only 2.4 KB — less&nbsp;than 1000 bytes gzipped!</p>
+                        <p class="subtitle is-6">vavilon.js weighs only 2.4 KB — less&nbsp;than 1000 bytes
+                            gzipped!</p>
                     </div>
                     <div class="column has-text-centered vav-feature">
                         <img class="icon is-large vav-feature-icon" src="./public/icons/cogs.svg" alt="">
@@ -153,7 +148,8 @@
                 <article class="vav-get-started-step">
                     <h3 class="title is-4">Step 5. Add the switch</h3>
                     <p class="subtitle is-6">
-                        The automatic language switching is already up and running! If you want your user to be able to
+                        The automatic language switching is already up and running! If you want your user to be able
+                        to
                         switch languages, use the <code>setLang</code> function.
                     </p>
                     <figure>
@@ -167,9 +163,11 @@
                 <h2 class="title is-2 has-text-centered">Examples</h2>
                 <article class="vav-get-started-step">
                     <p class="is-size-4">
-                        Right now there are not so many examples of websites using vavilon.js. One of the best and the
+                        Right now there are not so many examples of websites using vavilon.js. One of the best and
+                        the
                         most official examples would be this website. You can explore its source code on
-                        <a href="https://github.com/vavilon-js/vavilon-js.github.io">GitHub</a>, where it is available
+                        <a href="https://github.com/vavilon-js/vavilon-js.github.io">GitHub</a>, where it is
+                        available
                         under the MIT license.
                     </p>
                 </article>
@@ -221,6 +219,16 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const navbarToggle = document.getElementById('navbarToggle');
+
+        function toggleNav() {
+            navbar.classList.toggle('is-active');
+            navbarToggle.classList.toggle('is-active');
+        }
+    </script>
 </body>
 
 </html>
