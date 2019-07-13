@@ -1,69 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>vavilon.js | A quick, lightweight and easy-to-use i18n engine for static websites</title>
+    <title class="vavilon" data-vavilon="title">vavilon.js | A quick, lightweight and easy-to-use i18n engine for static
+        websites</title>
 
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400&display=swap&subset=cyrillic"
+          rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/html.min.js"></script>
-    <link href="./style/style.min.css" rel="stylesheet">
+    <link href="./dist/css/main.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./highlight/custom.css">
-    <script src="./highlight/highlight.pack.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon/favicon-16x16.png">
+
+    <link rel="stylesheet" href="./dist/css/highlight.css?v=4">
+    <script src="./dist/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-</head>
-<body>
-    <header class="header">
-        <img class="logo" src="./img/js-logo.svg" alt="vavilon.js logo">
-        <p class="lead">A quick, lightweight and easy-to-use i18n engine for static websites</p>
-        <div class="">
-            <pre><code class="block block-small html mw100">&lt;script src="https://cdn.jsdelivr.net/npm/vavilon@0.3.0/dist/vavilon.min.js"&gt;&lt;/script&gt;</code></pre>
-        </div>
-    </header>
-    <main class="main">
-        <p>With <code>vavilon.js</code> translating static websites is just a matter of a few extra lines of code.</p>
-        <section class="files">
-            <section class="file html oh">
-                <h3><code>index.html</code></h3>
-                <pre><code class="block html">&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;title&gt;Hello World&lt;/title&gt;
-  &lt;script src="ru.json" type="application/json" data-vavilon-dict="ru"&gt;&lt;/script&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/vavilon@0.3.0/dist/vavilon.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1 class="vavilon" data-vavilon="hello"&gt;Hello World!&lt;/h1&gt;
-  &lt;hr&gt;
-  &lt;button onclick="changeLocale('ru')"&gt;Russian&lt;/button&gt;
-  &lt;button onclick="changeLocale('en')"&gt;English&lt;/button&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-            </section>
-        
-            <section class="file json oh">
-                <h3><code>ru.json</code></h3>
-                <pre><code class="block json">{
-    "hello": "Привет, мир!"
-}</code></pre>
-            </section>
-        </section>
 
-        <p>You can find more info in our <a href="https://github.com/NickKaramoff/vavilon.js#readme">README on GitHub</a></p>
+    <script src="./i18n/ru.json" type="application/json" data-vavilon-dict="ru"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vavilon@1.0.0/dist/vavilon.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar is-primary has-shadow" role="navigation" aria-label="Header">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/" class="navbar-item">
+                        <img src="./public/img/js-logo.svg" alt="vavilon.js logo" width="130" height="28">
+                    </a>
+
+                    <a role="button" class="navbar-burger burger" id="navbarToggle" onclick="toggleNav()">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a href="#get-started" class="navbar-item vavilon" data-vavilon="get-started">
+                            Get started
+                        </a>
+                        <a href="#examples" class="navbar-item vavilon" data-vavilon="examples">
+                            Examples
+                        </a>
+                        <a href="#donate" class="navbar-item vavilon" data-vavilon="donate">
+                            Donate
+                        </a>
+                    </div>
+                    <div class="navbar-end">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link vavilon" data-vavilon="current-language">
+                                English
+                            </a>
+
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item" onclick="setLang('en')">
+                                    English
+                                </a>
+                                <a class="navbar-item" onclick="setLang('ru')">
+                                    Русский
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <p class="has-text-black is-size-1-desktop is-size-3 has-text-weight-light has-text-centered vavilon"
+                       data-vavilon="say-goodbye">
+                        Say goodbye to duplicate html files
+                    </p>
+                    <p class="is-size-5 has-text-grey has-text-centered vav-subtitle vavilon" data-vavilon="main-idea">
+                        vavilon.js makes i18n for static sites easy to setup and maintain
+                    </p>
+                    <p class="vav-get-started-button">
+                        <a href="#get-started" class="button is-primary is-medium vavilon" data-vavilon="get-started">Get
+                            started</a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/vavilon-js/vavilon.js" class="button is-text vavilon"
+                           target="_blank" data-vavilon="source-code">Source code</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="section has-background-white-bis">
+            <div class="container">
+                <h2 class="title is-3 has-text-centered vav-features-title vavilon" data-vavilon="reasons">Reasons to
+                    consider vavilon.js</h2>
+                <div class="columns vav-features">
+                    <div class="column has-text-centered vav-feature">
+                        <img class="icon is-large vav-feature-icon" src="./public/icons/airballoon.svg" alt="">
+                        <h3 class="title is-4 vavilon" data-vavilon="lightweight">Lightweight bundle</h3>
+                        <p class="subtitle is-6 vavilon" data-vavilon="lightweight-sub">vavilon.js weighs only 2.4 KB —
+                            less&nbsp;than 1000 bytes
+                            gzipped!</p>
+                    </div>
+                    <div class="column has-text-centered vav-feature">
+                        <img class="icon is-large vav-feature-icon" src="./public/icons/cogs.svg" alt="">
+                        <h3 class="title is-4 vavilon" data-vavilon="maintenance">Easy maintenance</h3>
+                        <p class="subtitle is-6 vavilon" data-vavilon="maintenance-sub">Edit translations without
+                            editing the website source code</p>
+                    </div>
+                    <div class="column has-text-centered vav-feature">
+                        <img class="icon is-large vav-feature-icon" src="./public/icons/shoe-print.svg" alt="">
+                        <h3 class="title is-4 vavilon" data-vavilon="gradual-setup">Gradual setup</h3>
+                        <p class="subtitle is-6 vavilon" data-vavilon="gradual-setup-sub">Translate string by string
+                            while keeping the site functional</p>
+                    </div>
+                    <div class="column has-text-centered vav-feature">
+                        <img class="icon is-large vav-feature-icon" src="./public/icons/source-pull.svg" alt="">
+                        <h3 class="title is-4 vavilon" data-vavilon="open-source">Free & open-source</h3>
+                        <p class="subtitle is-6 vavilon" data-vavilon="open-source-sub">Use and change vavilon.js in
+                            whichever way you desire</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="get-started">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered vavilon" data-vavilon="get-started">Get started</h2>
+                <article class="vav-get-started-step">
+                    <h3 class="title is-4 vavilon" data-vavilon="step-1">Step 1. Include vavilon.js in your webpage</h3>
+                    <p class="subtitle is-6">
+                        <span class="vavilon" data-vavilon="step-1-sub-1">
+                            You can also get the bundle via
+                        </span>
+                        <a href="https://www.npmjs.com/package/vavilon" target="_blank">npm</a>
+                        <span class="vavilon" data-vavilon="step-1-sub-2">
+                            or
+                        </span>
+                        <a href="https://github.com/vavilon-js/vavilon.js/releases" target="_blank">GitHub Releases</a>.
+                    </p>
+                    <figure>
+                        <pre><code class="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vavilon@1.0.0/dist/vavilon.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                    </figure>
+                </article>
+                <article class="vav-get-started-step">
+                    <h3 class="title is-4 vavilon" data-vavilon="step-2">Step 2. IDentify your strings</h3>
+                    <p class="subtitle is-6">
+                        <span class="vavilon" data-vavilon="step-2-sub-1">
+                            Think of a unique ID for every string and add it using
+                        </span>
+                        <code>vavilon</code>
+                        <span class="vavilon" data-vavilon="step-2-sub-2">
+                            class and
+                        </span>
+                        <code>data-vavilon</code>
+                        <span class="vavilon" data-vavilon="step-2-sub-3">
+                            attribute</span>.
+                    </p>
+                    <figure>
+                        <pre><code class="html">&lt;h1 class=&quot;vavilon&quot; data-vavilon=&quot;hello&quot;&gt;Hello world!&lt;/h1&gt;</code></pre>
+                    </figure>
+                </article>
+                <article class="vav-get-started-step">
+                    <h3 class="title is-4 vavilon" data-vavilon="step-3">Step 3. Translate your strings</h3>
+                    <p class="subtitle is-6 vavilon" data-vavilon="step-3-sub">
+                        Create a JSON file with an object where keys are the string IDs and the values are the
+                        translated strings.
+                    </p>
+                    <figure>
+                        <pre><code class="json">{
+  &quot;hello&quot;: &quot;Hallo Welt!&quot;
+}</code></pre>
+                    </figure>
+                </article>
+                <article class="vav-get-started-step">
+                    <h3 class="title is-4 vavilon" data-vavilon="step-4">Step 4. Connect the dictionaries</h3>
+                    <p class="subtitle is-6">
+                        <span class="vavilon" data-vavilon="step-4-sub-1">
+                            Just before you load the vavilon.js, insert the links to your dictionaries and specify their
+                            language. Don't forget about
+                        </span>
+                        <code>&lt;html&gt;</code>
+                        <span class="vavilon" data-vavilon="step-4-sub-2">
+                            tag</span>!
+                    </p>
+                    <figure>
+                        <pre><code class="html">&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;script src=&quot;path/to/de.json&quot; type=&quot;application/json&quot; data-vavilon-dict=&quot;de&quot;&gt;&lt;/script&gt;
+  &lt;!-- <span class="vavilon" data-vavilon="step-4-code">include vavilon.js here</span> --&gt;
+&lt;/head&gt;
+&lt;/html&gt;</code></pre>
+                    </figure>
+                </article>
+                <article class="vav-get-started-step">
+                    <h3 class="title is-4 vavilon" data-vavilon="step-5">Step 5. Add the switch</h3>
+                    <p class="subtitle is-6">
+                        <span class="vavilon" data-vavilon="step-5-sub-1">
+                            The automatic language switching is already up and running! If you want your user to be able
+                            to switch languages, use the
+                        </span>
+                        <code>setLang</code>
+                        <span class="vavilon" data-vavilon="step-5-sub-2">
+                             function</span>.
+                    </p>
+                    <figure>
+                        <pre><code class="html">&lt;button onclick=&quot;setLang(&#39;de&#39;)&quot;&gt;German&lt;/button&gt;</code></pre>
+                    </figure>
+                </article>
+            </div>
+        </section>
+        <section class="section has-background-white-bis" id="examples">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered vavilon" data-vavilon="examples">Examples</h2>
+                <article class="vav-get-started-step">
+                    <p class="is-size-4">
+                        <span class="vavilon" data-vavilon="examples-lead-1">
+                            Right now there are not so many examples of websites using vavilon.js. One of the best and
+                            the most official examples would be this website. You can explore its source code on
+                        </span>
+
+                        <a href="https://github.com/vavilon-js/vavilon-js.github.io">GitHub</a>,
+                        <span class="vavilon"
+                              data-vavilon="examples-lead-2">where it is available under the MIT license</span>.
+
+                    </p>
+                </article>
+            </div>
+        </section>
+        <section class="section" id="donate">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered vavilon" data-vavilon="donate">Donate</h2>
+                <article class="vav-get-started-step has-text-centered">
+                    <p class="is-size-4 vav-donate-text vavilon" data-vavilon="donate-lead">
+                        Like vavilon.js? You can support the developers and buy us some coffee :)
+                    </p>
+                    <a href="https://ko-fi.com/vavilon" class="vav-donate-button" target="_blank">
+                        <img src="./public/img/ko-fi.png" width="250" alt="Support me on Ko-fi">
+                    </a>
+                </article>
+            </div>
+        </section>
     </main>
     <footer class="footer">
-        <img src="./img/logo.svg" alt="Vavilon logo" width="75">
-        <p>
-            <a href="https://github.com/vavilon-js/vavilon.js"><code>vavilon.js</code></a>
-            is&nbsp;distributed under the&nbsp;<a href="https://github.com/vavilon-js/vavilon.js/blob/master/LICENSE">MIT&nbsp;license</a>.
-        
-            Found an&nbsp;issue with the&nbsp;website? You can report it&nbsp;<a href="https://github.com/vavilon-js/vavilon-js.github.io/issues/new">here</a>.
-        </p>
-        <p>
-            Vavilon icon made by&nbsp;<a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius&nbsp;Dan</a> from&nbsp;<a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a> is&nbsp;licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC&nbsp;3.0&nbsp;BY</a>
-        </p>
+        <div class="container">
+            <div class="columns">
+                <div class="column is-1">
+                    <img src="./public/img/logo.svg" width="90" alt="vavilon logo">
+                </div>
+                <div class="column">
+                    <p class="vav-footer-main">
+                        <strong>vavilon.js</strong>
+                        <span class="vavilon" data-vavilon="footer-vavilon">
+                            is free open source software and is distributed under the
+                        </span>
+                        <a href="https://github.com/vavilon-js/vavilon.js/blob/master/LICENSE">MIT License</a>.
+                    </p>
+                    <p>
+                        <span class="vavilon" data-vavilon="footer-logo-1">
+                            Vavilon logo
+                        </span>
+                        (<i class="vavilon" data-vavilon="footer-logo-2">to your left</i>)
+                        <span class="vavilon" data-vavilon="footer-logo-3">
+                            is made by
+                        </span>
+                        <a href="https://www.flaticon.com/authors/darius-dan" target="_blank">Darius Dan</a>
+                        <span class="vavilon" data-vavilon="footer-logo-4">
+                            from
+                        </span>
+                        <a href="https://www.flaticon.com" target="_blank">Flaticon</a><span class="vavilon" data-vavilon="footer-logo-5">
+                            and is licensed under
+                        </span>
+                        <a href="http://creativecommons.org/licenses/by/3.0" target="_blank">CC 3.0 BY</a>.
+                    </p>
+                    <p>
+                        <span class="vavilon" data-vavilon="footer-mdi-logos">
+                            Other icons made by contributors of
+                        </span>
+                        <a href="http://materialdesignicons.com/" target="_blank">MDI</a>.
+                    </p>
+                    <p>
+                        <span class="vavilon" data-vavilon="footer-bulma-1">
+                            Website made with
+                        </span>
+                        <a href="https://bulma.io" target="_blank">Bulma</a>,
+                        <span class="vavilon" data-vavilon="footer-bulma-2">
+                            an open source CSS framework</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const navbarToggle = document.getElementById('navbarToggle');
+
+        function toggleNav() {
+            navbar.classList.toggle('is-active');
+            navbarToggle.classList.toggle('is-active');
+        }
+    </script>
 </body>
+
 </html>
