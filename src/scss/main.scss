@@ -34,6 +34,21 @@ $family-monospace: "IBM Plex Mono", Monaco, monospace;
     }
 }
 
+.vav-donate-text {
+    margin-bottom: 1.5rem;
+}
+
+.vav-donate-button {
+    img {
+        transform: scale(0.9);
+        transition: transform 300ms;
+
+        &:hover {
+            transform: scale(1);
+        }
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
