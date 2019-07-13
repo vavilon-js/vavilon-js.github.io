@@ -25,7 +25,7 @@
                         <a href="/" class="navbar-item">
                             <img src="./public/img/js-logo.svg" alt="vavilon.js logo" width="130" height="28">
                         </a>
-        
+
                         <a role="button" class="navbar-burger burger" aria-label="Expand" aria-expanded="false"
                             data-target="navbar">
                             <span aria-hidden="true"></span>
@@ -35,11 +35,14 @@
                     </div>
                     <div id="navbar" class="navbar-menu">
                         <div class="navbar-start">
-                            <a href="/get-started" class="navbar-item">
+                            <a href="#get-started" class="navbar-item">
                                 Get started
                             </a>
-                            <a href="/examples" class="navbar-item">
+                            <a href="#examples" class="navbar-item">
                                 Examples
+                            </a>
+                            <a href="#donate" class="navbar-item">
+                                Donate
                             </a>
                         </div>
                         <div class="navbar-end">
@@ -55,35 +58,49 @@
             </nav>
     </header>
     <main>
-        <section class="hero is-light">
+        <section class="hero">
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <p class="has-text-black is-size-1-desktop is-size-3 has-text-weight-light has-text-centered">
                         Say goodbye to duplicate html files
                     </p>
-                    <p class="is-size-5 has-text-grey has-text-centered mb30">
+                    <p class="is-size-5 has-text-grey has-text-centered vav-subtitle">
                         vavilon.js makes i18n for static sites easy to setup and maintain
                     </p>
                     <a href="/get-started" class="button is-primary is-medium">Get started</a>
                 </div>
             </div>
         </section>
-        <section class="section">
+        <section class="section has-background-white-bis">
             <div class="container">
-                <div class="columns">
-                    <div class="column has-text-centered">
-                        <h2 class="title is-4">Gradual setup</h2>
-                        <p class="subtitle is-6">Translate string by string while keeping the site functional</p>
+                <h2 class="title is-3 has-text-centered vav-features-title">Reasons to consider vavilon.js</h2>
+                <div class="columns vav-features">
+                    <div class="column has-text-centered vav-feature">
+                        <img class="icon is-large vav-feature-icon" src="./public/icons/airballoon.svg" alt="">
+                        <h3 class="title is-4">Lightweight bundle</h3>
+                        <p class="subtitle is-6">vavilon.js weighs only 2.4 KB — less&nbsp;than 1000 bytes gzipped!</p>
                     </div>
-                    <div class="column has-text-centered">
-                        <h2 class="title is-4">Lightweight bundle</h2>
-                        <p class="subtitle is-6">vavilon.js weights only 2.2 KiB (&lt;1000 bytes gzipped)</p>
-                    </div>
-                    <div class="column has-text-centered">
-                        <h2 class="title is-4">Easy maintenance</h2>
+                    <div class="column has-text-centered vav-feature">
+                        <img class="icon is-large vav-feature-icon" src="./public/icons/cogs.svg" alt="">
+                        <h3 class="title is-4">Easy maintenance</h3>
                         <p class="subtitle is-6">Edit translations without editing the website source code</p>
                     </div>
+                    <div class="column has-text-centered vav-feature">
+                        <img class="icon is-large vav-feature-icon" src="./public/icons/shoe-print.svg" alt="">
+                        <h3 class="title is-4">Gradual setup</h3>
+                        <p class="subtitle is-6">Translate string by string while keeping the site functional</p>
+                    </div>
+                    <div class="column has-text-centered vav-feature">
+                        <img class="icon is-large vav-feature-icon" src="./public/icons/source-pull.svg" alt="">
+                        <h3 class="title is-4">Free & open-source</h3>
+                        <p class="subtitle is-6">Use and change vavilon.js in whichever way you desire</p>
+                    </div>
                 </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered">Get started</h2>
             </div>
         </section>
     </main>

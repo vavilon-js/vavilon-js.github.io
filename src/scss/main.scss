@@ -6,8 +6,23 @@ $primary-invert: #000;
 $family-sans-serif: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
 $family-monospace: "IBM Plex Mono", Monaco, monospace;
 
-.mb30 {
+@import "../../node_modules/bulma/bulma.sass";
+
+.vav-subtitle {
     margin-bottom: 30px;
 }
 
-@import "../../node_modules/bulma/bulma.sass";
+.title.vav-features-title {
+    margin-bottom: 2.5rem;
+}
+
+.vav-feature {
+    margin: 0 1.5rem;
+    padding: 1.25rem;
+    border-radius: 10px;
+}
+
+.vav-feature-icon {
+    margin-bottom: 1rem;
+}
+
